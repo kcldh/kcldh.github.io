@@ -180,8 +180,9 @@
 
 let rmf = {};
 rmf.showRightMenu = function(isTrue, x=0, y=0){
-    let $rightMenu = $('#rightMenu');
-    $rightMenu.css('top',x+'px').css('left',y+'px');
+    let $rightMenu = document.getElementById('rightMenu');
+    $rightMenu.style.top = x+'px';
+    $rightMenu.style.left = y+'px';
 
     if(isTrue){
         $rightMenu.show();
