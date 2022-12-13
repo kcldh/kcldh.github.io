@@ -65,7 +65,17 @@ rmf.copyWordsLink = function () {
     txa.select();
     document.execCommand("Copy");
     document.body.removeChild(txa);
-    Swal.fire("复制成功！");
+    Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: false,
+    }).fire({
+        icon: 'success',
+        title: '复制成功'
+    })
+
 }
 rmf.switchReadMode = function () {
     const $body = document.body
