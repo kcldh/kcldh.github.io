@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>rabbitmq安装</title>
+      <link href="/2022/12/15/rabbitmq%E5%AE%89%E8%A3%85/"/>
+      <url>/2022/12/15/rabbitmq%E5%AE%89%E8%A3%85/</url>
+      
+        <content type="html"><![CDATA[<h1>1、安装</h1><h3 id="windows安装">windows安装</h3><p>1、<a href="https://www.rabbitmq.com/which-erlang.html">查看erLang和RabbitMQ的版本对应</a></p><p>2、去<a href="https://www.erlang.org/downloads?spm=a2c6h.12873639.article-detail.7.433733dfV551eG">erlang官网</a>下载erlang,，安装一直点next(下一步)就行了(存储路径自己修改)，安装完之后，配置环境变量。使用 erl 判断是否安装</p><p><img src="https://cdn.jsdelivr.net/gh/kcldh/kcldh-pic-go@main/imgs/image-20221215193723385.png" alt="image-20221215193723385"></p><p>3、根据第一步获取的版本信息去下载对应的RabbitMQ，<a href="https://github.com/rabbitmq/rabbitmq-server/tags">下载地址</a></p><p>下载完后，接着到双击安装，一直点下一步安装即可，安装完成后，找到安装目录：</p><p><img src="https://cdn.jsdelivr.net/gh/kcldh/kcldh-pic-go@main/imgs/image-20221215194011976.png" alt="image-20221215194011976"></p><p>在此目录下打开cmd命令，输入 <code>rabbitmq-plugins enable rabbitmq_management</code> 命令安装管理页面的插件。</p><p>然后双击rabbitmq-server.bat启动脚本</p><p>打开浏览器输入<a href="http://localhost:15672/?spm=a2c6h.12873639.article-detail.9.433733dfV551eG">http://localhost:15672</a>，账号密码默认是：guest/guest</p><p>到这一步，安装就大功告成了！</p><p><img src="https://cdn.jsdelivr.net/gh/kcldh/kcldh-pic-go@main/imgs/image-20221215194155884.png" alt="image-20221215194155884"></p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget http://erlang.org/download/otp_src_20.0.tar.gz</span><br><span class="line">tar -zxvf otp_src_20.0.tar.gz</span><br><span class="line">cd otp_src_20.0</span><br><span class="line">./configure</span><br><span class="line">make -j8</span><br><span class="line">make install</span><br></pre></td></tr></table></figure><h3 id="ubuntu">ubuntu</h3><p>安装erlang</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-get install erlang-nox</span><br></pre></td></tr></table></figure><p>安装Rabbitmq</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install rabbitmq-server</span><br></pre></td></tr></table></figure><p>常用命令</p><p>启动、停止、重启、状态rabbitMq命令</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo rabbitmq-server start</span><br><span class="line">sudo rabbitmq-server stop</span><br><span class="line">sudo rabbitmq-server restart</span><br><span class="line">sudo rabbitmqctl status</span><br></pre></td></tr></table></figure><p>启用rabbitmq自带的一个web插件，可以用来管理消息队列</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//rabbitmq默认端口号5672，web管理端口号是15672，管理地址为http://ip:15672</span><br><span class="line">rabbitmq-plugins enable rabbitmq_management</span><br></pre></td></tr></table></figure><p>创建用户，指定用户名以及密码</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//创建用户</span><br><span class="line">rabbitmqctl add_user admin 123456 </span><br><span class="line">//用户名admin,密码123456修改密码：</span><br><span class="line">rabbitmqctl  change_password  username&#x27;123456&#x27;</span><br></pre></td></tr></table></figure><p>添加admin，并赋予administrator权限</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 添加admin用户，密码设置为admin。</span><br><span class="line">sudo rabbitmqctl add_user  admin  admin  </span><br><span class="line"></span><br><span class="line">// 赋予权限</span><br><span class="line">sudo rabbitmqctl set_user_tags admin administrator </span><br><span class="line"></span><br><span class="line">// 赋予virtual host中所有资源的配置、写、读权限以便管理其中的资源</span><br><span class="line">sudo rabbitmqctl  set_permissions -p / admin &#x27;.*&#x27; &#x27;.*&#x27; &#x27;.*&#x27;</span><br></pre></td></tr></table></figure><p>参考链接</p><p><a href="https://developer.aliyun.com/article/769883#slide-4">windows安装参考</a></p><p><a href="https://blog.51cto.com/u_15782374/5656192">ubuntu安装参考</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> rabbitmq </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>reverse1</title>
       <link href="/2022/12/09/reverse/"/>
       <url>/2022/12/09/reverse/</url>
