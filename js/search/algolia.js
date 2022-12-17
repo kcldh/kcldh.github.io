@@ -56,13 +56,24 @@ window.addEventListener('load', () => {
     }
   })
 
+  // search.addWidget(
+  //   instantsearch.widgets.searchBox({
+  //     container: '#algolia-search-input',
+  //     reset: false,
+  //     magnifier: false,
+  //     placeholder: GLOBAL_CONFIG.algolia.languages.input_placeholder
+  //   })
+  // )
   search.addWidget(
-    instantsearch.widgets.searchBox({
-      container: '#algolia-search-input',
-      reset: false,
-      magnifier: false,
-      placeholder: GLOBAL_CONFIG.algolia.languages.input_placeholder
-    })
+      instantsearch.widgets.searchBox({
+        container: '#algolia-search-input',
+        showReset: false,
+        showSubmit: false, // 设为true 可以通过按钮搜索
+        searchAsYouType: false, // 新增 可以实现回车或点击按钮搜索，不会每次输入都搜索
+        placeholder: GLOBAL_CONFIG.algolia.languages.input_placeholder,
+        magnifier: false,
+        showLoadingIndicator: true
+      })
   )
   search.addWidget(
     instantsearch.widgets.hits({
