@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>rabbitmq遇见的问题记录</title>
+      <link href="/2022/12/18/rabbitmq%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/"/>
+      <url>/2022/12/18/rabbitmq%E9%81%87%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
+      
+        <content type="html"><![CDATA[<p><strong><font color='red'>注意：</font> 所有人遇见的报错可能相同，但是问题不一定相同</strong></p><h2 id="ShutdownSignalException">ShutdownSignalException</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Caused by: com.rabbitmq.client.ShutdownSignalException: channel error; protocol method: #method&lt;channel.close&gt;(reply-code=<span class="number">404</span>, reply-text=NOT_FOUND - no queue <span class="string">&#x27;ack_queue2&#x27;</span> in vhost <span class="string">&#x27;/&#x27;</span>, class-id=<span class="number">60</span>, method-id=<span class="number">20</span>)</span><br><span class="line">at com.rabbitmq.client.impl.ChannelN.asyncShutdown(ChannelN.java:<span class="number">517</span>)</span><br><span class="line">at com.rabbitmq.client.impl.ChannelN.processAsync(ChannelN.java:<span class="number">341</span>)</span><br><span class="line">at com.rabbitmq.client.impl.AMQChannel.handleCompleteInboundCommand(AMQChannel.java:<span class="number">182</span>)</span><br><span class="line">at com.rabbitmq.client.impl.AMQChannel.handleFrame(AMQChannel.java:<span class="number">114</span>)</span><br><span class="line">at com.rabbitmq.client.impl.AMQConnection.readFrame(AMQConnection.java:<span class="number">739</span>)</span><br><span class="line">at com.rabbitmq.client.impl.AMQConnection.access$<span class="number">300</span>(AMQConnection.java:<span class="number">47</span>)</span><br><span class="line">at com.rabbitmq.client.impl.AMQConnection$MainLoop.run(AMQConnection.java:<span class="number">666</span>)</span><br><span class="line">at java.base/java.lang.Thread.run(Thread.java:<span class="number">834</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>解决： 还未创建rabbitmq队列，需要先运行生产信息的程序或者手动在rabbitmq的web端创建队列</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> rabbitmq </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>rabbitmq安装</title>
       <link href="/2022/12/15/rabbitmq%E5%AE%89%E8%A3%85/"/>
       <url>/2022/12/15/rabbitmq%E5%AE%89%E8%A3%85/</url>
@@ -38,19 +59,6 @@
             <tag> reverse </tag>
             
         </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hello World</title>
-      <link href="/2022/12/07/hello-world/"/>
-      <url>/2022/12/07/hello-world/</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start">Quick Start</h2><h3 id="Create-a-new-post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server">Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-      
-      
       
     </entry>
     
